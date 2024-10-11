@@ -3,13 +3,13 @@ name: aiyoubErsteWorkflow
 on: 
   push:
     branches:
-      
+      - main
   pull_request:
     branches:
-      
+      - main
 
 jobs:
-  job_1: 
+  changed-job: 
     runs-on: ubuntu-latest
     steps:
       - name: AiyoubErsteSchritt
@@ -26,4 +26,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Datum anzeigen
-        run: date       
+        run: date
