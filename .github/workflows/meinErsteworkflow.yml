@@ -1,6 +1,12 @@
 name: aiyoubErsteWorkflow
 
-on: push
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   job_1: 
@@ -8,3 +14,16 @@ jobs:
     steps:
       - name: AiyoubErsteSchritt
         run: echo "Hallo Suheib, Hallo Marian"
+
+      - name: Abschied
+        run: echo "Bye Bye!"
+
+zweiter-job:
+    runs-on: ubuntu-latest
+    needs: changed-job
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Datum anzeigen
+        run: date       
